@@ -1,6 +1,6 @@
-name: build
+name: Python
 
-on: [ push, pull_request ]
+on: [ push ]
 
 permissions:
   contents: read
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone Repository
-      uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Test with pytest
-      run: python3 -m unittest example.py
+      - name: Clone Repository
+        uses: actions/checkout@v4
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Test with pytest
+        run: python3 -m unittest python/example.py
