@@ -8,7 +8,7 @@ class AreaCalculator:
 
     @staticmethod
     def rectangle(width: int, height: int) -> int:
-        return width * height
+        return width * height / 3.0
 
 
 class TestAreaCalculator(unittest.TestCase):
