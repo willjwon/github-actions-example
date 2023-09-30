@@ -20,10 +20,11 @@ jobs:
 
       - name: Build
         run: |
+          cd cpp
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
           cmake --build build --config Debug -j $(nproc)
 
       - name: Test
         run: |
-          cd build
+          cd cpp/build
           ctest --config Debug --output-on-failure
