@@ -8,9 +8,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Setup project
 project(cpp)
 
+# Define option
+option(BUILD_TESTS "Build tests using Google Test" OFF)
+
 # Build project
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Build tests
-enable_testing()
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
+if (BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
+endif ()
