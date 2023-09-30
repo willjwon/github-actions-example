@@ -1,0 +1,29 @@
+name: C++
+
+on: [ push ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Set up CMake
+        run: |
+          sudo apt -y update
+          sudo apt -y install cmake
+
+      - name: Build
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
+          cmake --build build --config Debug -j $(nproc)
+
+      - name: Test
+        run: |
+          cd build
+          ctest --config Debug --output-on-failure
