@@ -1,4 +1,5 @@
 # github-actions-example
-[![build](https://github.com/willjwon/github-actions-example/actions/workflows/python-app.yml/badge.svg)](https://github.com/willjwon/github-actions-example/actions/workflows/python-app.yml)
+[![build](https://github.com/willjwon/github-actions-example/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/willjwon/github-actions-example/actions/workflows/python-app.yml)
+[![C++](https://github.com/willjwon/github-actions-example/actions/workflows/cpp-test.yml/badge.svg?branch=main)](https://github.com/willjwon/github-actions-example/actions/workflows/cpp-test.yml)
 
 GitHub Actions Example Repo
