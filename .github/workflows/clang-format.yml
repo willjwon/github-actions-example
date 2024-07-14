@@ -1,0 +1,22 @@
+name: format
+on: [ push ]
+
+permissions:
+  contents: read
+
+jobs:
+  check-code-formatting:
+    name: Code Formatting
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v4
+
+    - name: Set Up clang-format
+      run: |
+        sudo apt -y update
+        sudo apt -y install clang-format
+    
+    - name: Print clang-format info
+      run: |
+        clang-format --version
